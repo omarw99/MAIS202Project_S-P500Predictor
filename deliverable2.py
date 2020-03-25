@@ -42,7 +42,7 @@ nltk.download('wordnet')
 nltk.download('stopwords')
 en_stop = set(nltk.corpus.stopwords.words('english'))
 
-articles_datapath = "https://raw.githubusercontent.com/omarw99/MAIS202Project/master/Combined_News_DJIA.csv"
+articles_datapath = "https://raw.githubusercontent.com/omarw99/MAIS202Project_SP500Predictor/master/Dataset/Combined_News_DJIA.csv"
 articles_df = pd.read_csv(articles_datapath).drop(columns = ["Label"])
 
 '''
@@ -58,7 +58,7 @@ for i in range (len(articles_df)):
 
 print(articles_df)
 '''
-stockReturn_datapath = "https://raw.githubusercontent.com/omarw99/MAIS202Project/master/SP500.csv"
+stockReturn_datapath = "https://raw.githubusercontent.com/omarw99/MAIS202Project_SP500Predictor/master/Dataset/SP500.csv"
 stockReturn_df = pd.read_csv(stockReturn_datapath).drop(columns = ["High", "Low", "Close", "Volume"])
 #Add column with daily return calculated using adjusted closing and opening prices
 stockReturn_df["Daily Return"] = (stockReturn_df["Adj Close"] - stockReturn_df["Open"]) / stockReturn_df["Open"]
